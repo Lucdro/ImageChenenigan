@@ -567,13 +567,16 @@ function outPutImage(){
     tempctx.putImageData(scaled,0,0);
     img.src = tempCanvas.toDataURL();
     img.addEventListener('load', function(){
-          ctx_out.drawImage(img, 0,0, img.width, img.height,
-            imgStart_X,imgStart_Y, scaled_W, scaled_H);  
+        ctx_out.drawImage(img, 0,0, img.width, img.height,
+        imgStart_X,imgStart_Y, scaled_W, scaled_H);  
+        var a = document.getElementById('download'); //Create <a>
+        a.href = img.src; //Image Base64 Goes here
+        a.download = "Image.png"; //File name Here
     })
 }
 
 function download(){
-    alert('nao implementei fodase')
+    
 }
 
 function Scale(imagedata,nw,nh){
