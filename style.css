@@ -1,0 +1,182 @@
+:root{
+    --main_bg_color: rgb(16, 3, 41);
+    --secundary_bg_color: rgb(42, 21, 119);
+    --main_font_color: white;
+    --secundary_font_color: rgb(0, 0, 0);
+    --main_component_color:rgb(15, 15, 15);
+    --secundary_component_color:rgb(221, 221, 221);
+}
+*{
+    margin:0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body{
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(190deg, var(--main_bg_color),var(--secundary_bg_color));
+}
+input{
+    background-color: var(--main_component_color);
+    color:var(--main_font_color);
+    font-size: 30px;
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.image{
+    border-radius: 15px;
+    border-width: 8px;
+    border-color: rgb(0, 0, 0);
+    background-color: white;
+}
+.images{
+    padding: 10px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.navtool{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.navtool > *{
+    margin-top: 20px;
+}
+.controls{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 60px;
+}
+.control_btn{
+    background-color: var(--main_component_color);
+    color:var(--main_font_color);
+    font-size: 30px;
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    transition-duration: 0.2s;
+    margin: 10px;
+}
+.control_btn:hover{
+    background-color: var(--secundary_component_color);
+    color:var(--secundary_font_color);
+    cursor: pointer;
+}
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.onoff{
+    color:var(--main_font_color);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+}
+.onoff > div{
+    margin-bottom: 10px;
+}
+.options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.options > *{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.valcamp{
+    color:var(--main_font_color);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+}
+#fullscreen_img{
+    position: absolute;
+    z-index: 10;
+    top: 50px;
+    bottom: 100px;
+    left: 100px;
+    margin-left: 50px;
+}
+#fullscreenwrapper{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.visible{
+    visibility: visible;
+}
+.invisible{
+    visibility: hidden;
+}

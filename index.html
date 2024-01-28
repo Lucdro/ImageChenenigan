@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Testing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="fullscreenwrapper" class="invisible">
+        <img src="" alt="" id="fullscreen_img">
+    </div>
+    <div class="navtool">
+        <div class="inout">
+            <input type='file' id="getimg"/>
+            <button id="download" class="control_btn">Download</button>
+            <button id="outIn" class="control_btn">Use output as input</button>
+        </div>
+        <div class="options">
+            <div class="onoff">
+                <div>Somar no filtro</div>
+                <label class="switch">
+                    <input type="checkbox" id="allColors">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="onoff">
+                <div>Inverter Cor</div>
+                <label class="switch">
+                    <input type="checkbox" id="invertColor">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="valcamp">
+                <div>Red</div>
+                <input type="range" name="r" id="red">
+            </div>
+            <div class="valcamp">
+                <div>Green</div>
+                <input type="range" name="g" id="green">
+            </div>
+            <div class="valcamp">
+                <div>Blue</div>
+                <input type="range" name="b" id="blue">
+            </div>
+            <div class="valcamp">
+                <div>Alpha</div>
+                <input type="range" name="a" id="alpha">
+            </div>
+        </div>
+        <div class="controls">
+            <button id="alterValues" class="control_btn">Alter Values</button>
+            <button id="defaultValues" class="control_btn">Default Values</button>
+        </div>
+        <div class="controls">
+            <button id="edgeDetection" class="control_btn">Edge Detection</button>
+            <button id="edgeDetection2" class="control_btn">Edge Detection Versao correta</button>
+            <button id="edgeDetectionHSL" class="control_btn">Edge Detection HSL</button>
+            <button id="grayscale" class="control_btn">Grayscale</button>
+            <button id="quantization" class="control_btn">Quantization</button>
+            <button id="colorSpread" class="control_btn">Color Spread</button>
+            <button id="colorBlobbing" class="control_btn">Color Blobbing</button>
+            <button id="colorBlobbingScaled" class="control_btn">Color Blobbing Scaled</button>
+            <button id="styleLumination" class="control_btn">Style Lumination</button>
+        </div>
+    </div>
+    <div class="images">
+        <canvas id="canvas_input" class="image"></canvas>
+        <canvas id="canvas_output" class="image"></canvas>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
