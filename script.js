@@ -490,10 +490,10 @@ function styleLumination(){
         if(hsl[2] < 20){
             novaimagem[i] = imageData[i];
             novaimagem[i+1] = imageData[i+1];
-            novaimagem[i+2] = addColor(imageData[i+2],40*(1+bGain));
+            novaimagem[i+2] = addColor(imageData[i+2],40*(2*bGain));
             novaimagem[i+3] = imageData[i+3];
         }else if(hsl[2] > 50){
-            novaimagem[i] = addColor(imageData[i],40 * (1+rGain));
+            novaimagem[i] = addColor(imageData[i],40 * (2*rGain));
             novaimagem[i+1] = imageData[i+1];
             novaimagem[i+2] = imageData[i+2];
             novaimagem[i+3] = imageData[i+3];
