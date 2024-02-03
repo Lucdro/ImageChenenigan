@@ -488,21 +488,28 @@ function styleLumination(){
     for(let i = 0; i < imageData.length; i += 4){
         const hsl = RGBToHSL(imageData[i],imageData[i+1],imageData[i+2]);
         if(hsl[2] < 20){
-            novaimagem[i] = imageData[i];
-            novaimagem[i+1] = imageData[i+1];
-            novaimagem[i+2] = addColor(imageData[i+2],40*(2*bGain));
-            novaimagem[i+3] = imageData[i+3];
+            if(invertcolor){
+                novaimagem[i] = addColor(imageData[i],40 * (2*rGain));
+                novaimagem[i+2] = imageData[i+2];
+            }else{
+                novaimagem[i] = imageData[i];
+                novaimagem[i+2] = addColor(imageData[i+2],40*(2*bGain));
+            }
         }else if(hsl[2] > 50){
-            novaimagem[i] = addColor(imageData[i],40 * (2*rGain));
-            novaimagem[i+1] = imageData[i+1];
-            novaimagem[i+2] = imageData[i+2];
-            novaimagem[i+3] = imageData[i+3];
-        }else{
-            novaimagem[i] = imageData[i];
-            novaimagem[i+1] = imageData[i+1];
-            novaimagem[i+2] = imageData[i+2];
-            novaimagem[i+3] = imageData[i+3];
+            if(invertcolor){
+                novaimagem[i] = imageData[i];
+                novaimagem[i+2] = addColor(imageData[i+2],40*(2*bGain));
+            }else{
+                novaimagem[i] = addColor(imageData[i],40 * (2*rGain));
+                novaimagem[i+2] = imageData[i+2];
+            }
         }
+        else{
+            novaimagem[i] = imageData[i];
+            novaimagem[i+2] = imageData[i+2];
+        }
+        novaimagem[i+1] = imageData[i+1];
+        novaimagem[i+3] = imageData[i+3];
     }
     output = new ImageData(novaimagem,scannedImage.width,scannedImage.height)
     outPutImage();
