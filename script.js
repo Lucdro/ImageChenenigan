@@ -323,7 +323,7 @@ function colorQuantization(){
         if(pixelIndex == 3) 
             quantizazas[i] = 255;
         else
-            quantizazas[i] = Math.floor(imageData[i]/divNumb)*divNumb;
+            quantizazas[i] = Math.round(imageData[i]/divNumb)*divNumb;
         pixelIndex++;
         if(pixelIndex > 3) pixelIndex = 0;
     }
