@@ -487,7 +487,7 @@ function styleLumination(){
     const novaimagem = new Uint8ClampedArray(imageData.length);
     for(let i = 0; i < imageData.length; i += 4){
         const hsl = RGBToHSL(imageData[i],imageData[i+1],imageData[i+2]);
-        if(hsl[2] < 20){
+        if(hsl[2] < 12){
             if(invertcolor){
                 novaimagem[i] = addColor(imageData[i],25 * (2*rGain));
                 novaimagem[i+1] = addColor(imageData[i+1],10 * (2*gGain));
@@ -497,7 +497,7 @@ function styleLumination(){
                 novaimagem[i+1] = addColor(imageData[i+1],5 * (2*gGain));
                 novaimagem[i+2] = addColor(imageData[i+2],25*(2*bGain));
             }
-        }else if(hsl[2] > 60){
+        }else if(hsl[2] > 45){
             if(invertcolor){
                 novaimagem[i] = addColor(imageData[i],10 * (2*rGain));
                 novaimagem[i+1] = addColor(imageData[i+1],5 * (2*gGain));
