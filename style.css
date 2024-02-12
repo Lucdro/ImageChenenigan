@@ -34,6 +34,8 @@ input{
     padding: 10px 100px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     cursor: pointer;
 }
@@ -157,12 +159,9 @@ input{
     align-items: center;
 }
 #fullscreen_img{
-    position: absolute;
-    z-index: 10;
-    top: 50px;
-    bottom: 100px;
-    left: 100px;
-    margin-left: 50px;
+    margin: 10%;
+    width: 80%;
+    height: 80%;
 }
 #fullscreenwrapper{
     position: absolute;
@@ -179,4 +178,23 @@ input{
 }
 .invisible{
     visibility: hidden;
+}
+
+@media (max-width: 1080px) {
+    .controls{
+        font-size: 12px;
+    }
+    .control_btn{
+        font-size: 16px;
+    }
+    #getimg{
+        font-size: 16px;
+    }
+    .images{
+        padding: 5% 5%;
+    }
+    .image{
+        margin: 5% 5%;
+        width: 80%;
+    }
 }

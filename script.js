@@ -103,10 +103,11 @@ window.addEventListener('load', function() {
     });
     canvas_output.addEventListener('click', fullimage_output);
     canvas_input.addEventListener('click', fullimage_input);
-    document.getElementById('fullscreenwrapper').addEventListener('click', function(e){
+    document.getElementById('fullscreen_img').addEventListener('click', function(e){
         let wrapper = document.getElementById('fullscreenwrapper');
         wrapper.classList.remove('visible');
         wrapper.classList.add('invisible');
+        document.getElementById('fullscreen_img').src = ''
     });
 });
 function preventDefaults(e){
@@ -147,7 +148,8 @@ function fullimage_output(){
     tempctx.putImageData(output,0,0);
     document.getElementById('fullscreen_img').src = tempCanvas.toDataURL();
 
-}function fullimage_input(){
+}
+function fullimage_input(){
     if(!image.src) return;
     let wrapper = document.getElementById('fullscreenwrapper');
     wrapper?.classList.add('visible');
