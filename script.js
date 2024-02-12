@@ -63,6 +63,7 @@ window.addEventListener('load', function() {
         tempCanvas.width = output.width;
         tempCanvas.height = output.height;
         tempctx.putImageData(output,0,0);
+        lastOperation = undefined;
         image.src = tempCanvas.toDataURL();
     });
     this.document.getElementById('edgeDetection')?.addEventListener('click', edgeDetection);
