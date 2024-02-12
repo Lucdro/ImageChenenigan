@@ -147,7 +147,7 @@ function fullimage_output(){
     tempCanvas.height = output.height;
     tempctx.putImageData(output,0,0);
     document.getElementById('fullscreen_img').src = tempCanvas.toDataURL();
-    scroll(0,0);
+    window.scrollTo(0,0);
 }
 function fullimage_input(){
     if(!image.src) return;
@@ -155,7 +155,7 @@ function fullimage_input(){
     wrapper?.classList.add('visible');
     wrapper?.classList.remove('invisible');
     document.getElementById('fullscreen_img').src = image.src;
-    scroll(0,0);
+    window.scrollTo(0,0);
 }
 function edgeDetection2(){
     const scannedImage = ctx?.getImageData(0,0,canvas.width,canvas.height);
