@@ -490,22 +490,22 @@ function styleLumination(){
         if(hsl[2] < 20){
             if(invertcolor){
                 novaimagem[i] = addColor(imageData[i],30 * (2*rGain));
-                novaimagem[i+1] = addColor(imageData[i+1],10 * (2*gGain));
-                novaimagem[i+2] = addColor(imageData[i+2],5*(2*bGain));
+                novaimagem[i+1] = addColor(imageData[i+1],20 * (2*gGain));
+                novaimagem[i+2] = addColor(imageData[i+2],10*(2*bGain));
             }else{
-                novaimagem[i] = addColor(imageData[i],10 * (2*rGain));
-                novaimagem[i+1] = addColor(imageData[i+1],5 * (2*gGain));
+                novaimagem[i] = addColor(imageData[i],20 * (2*rGain));
+                novaimagem[i+1] = addColor(imageData[i+1],10 * (2*gGain));
                 novaimagem[i+2] = addColor(imageData[i+2],30*(2*bGain));
             }
         }else if(hsl[2] > 50){
             if(invertcolor){
-                novaimagem[i] = addColor(imageData[i],10 * (2*rGain));
-                novaimagem[i+1] = addColor(imageData[i+1],5 * (2*gGain));
+                novaimagem[i] = addColor(imageData[i],20 * (2*rGain));
+                novaimagem[i+1] = addColor(imageData[i+1],10 * (2*gGain));
                 novaimagem[i+2] = addColor(imageData[i+2],30*(2*bGain));
             }else{
                 novaimagem[i] = addColor(imageData[i],30 * (2*rGain));
-                novaimagem[i+1] = addColor(imageData[i+1],10 * (2*gGain));
-                novaimagem[i+2] = addColor(imageData[i+2],5*(2*bGain));
+                novaimagem[i+1] = addColor(imageData[i+1],20 * (2*gGain));
+                novaimagem[i+2] = addColor(imageData[i+2],10*(2*bGain));
             }
         }
         else{
