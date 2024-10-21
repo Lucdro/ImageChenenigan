@@ -3,6 +3,7 @@ canvas_input.will
 const canvas_output = document.getElementById('canvas_output');
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
+const dropArea = document.getElementById('dropArea');
 const image = new Image();
 var output;
 var output_update;
@@ -109,6 +110,14 @@ window.addEventListener('load', function() {
         wrapper.classList.remove('visible');
         wrapper.classList.add('invisible');
         document.getElementById('fullscreen_img').src = ''
+    });
+    dropArea.addEventListener('paste', (event) => {
+        const items = event.clipboardData.items;
+        for (const item of items) {
+            if (item.kind === 'file' && item.type.startsWith('image/')) {
+                image.src = URL.createObjectURL(item.getAsFile());
+            }
+        }
     });
 });
 function preventDefaults(e){
